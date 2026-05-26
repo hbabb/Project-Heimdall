@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: docker.io/postgres:18
+    container_name: heimdall-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: heimdall_development
+      POSTGRES_USER: heimdall
+      POSTGRES_PASSWORD: heimdall_dev_password
+
+    ports:
+      - "127.0.0.1:5432:5432"
+
+    volumes:
+      - heimdall_postgres_data:/var/lib/postgresql
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U heimdall -d heimdall_development"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  heimdall_postgres_data:
