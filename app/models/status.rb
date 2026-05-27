@@ -4,5 +4,5 @@ class Status < ApplicationRecord
   validates :sort_order, presence: true, uniqueness: true
   validates :code, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
-  validates :active, inclusion: { in: [true, false] }
+  validates :active, inclusion: { in: [ true, false ] }
 end

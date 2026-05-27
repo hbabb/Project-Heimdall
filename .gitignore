@@ -35,3 +35,6 @@
 
 # JetBrains IDE local project files
 .idea/
+
+# Junie files
+.junie/

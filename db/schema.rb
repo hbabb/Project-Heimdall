@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_26_220115) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_27_004546) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -36,6 +36,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_26_220115) do
     t.index ["department_id"], name: "index_employee_profiles_on_department_id"
     t.index ["office_id"], name: "index_employee_profiles_on_office_id"
     t.index ["user_id"], name: "index_employee_profiles_on_user_id", unique: true
+  end
+
+  create_table "license_jurisdictions", force: :cascade do |t|
+    t.boolean "active", default: true, null: false
+    t.boolean "business_license_required", default: false, null: false
+    t.datetime "created_at", null: false
+    t.string "jurisdiction_type", null: false
+    t.string "name", null: false
+    t.text "notes"
+    t.string "state", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "state", "jurisdiction_type"], name: "index_license_jurisdictions_on_identity", unique: true
   end
 
   create_table "offices", force: :cascade do |t|
