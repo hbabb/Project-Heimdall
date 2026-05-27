@@ -46,15 +46,15 @@ This branch should focus on configuration, development setup, database setup, RE
 - [x] Confirm Ruby is managed by `mise`
 - [x] Confirm the project uses Ruby `4.0`
 - [x] Confirm Rails is installed and working
-- [ ] Confirm PostgreSQL is configured
-- [ ] Confirm the app boots locally
+- [x] Confirm PostgreSQL is configured
+- [x] Confirm the app boots locally
 - [x] Add `README.md`
 - [x] Add `TODO.md`
 - [x] Add `LICENSE`
 - [x] Add PolyForm Noncommercial License 1.0.0 text to `LICENSE`
 - [x] Add basic project metadata
 - [ ] Confirm `bin/setup` works
-- [ ] Confirm `bin/rails server` works
+- [x] Confirm `bin/rails server` works
 - [ ] Confirm `bin/rails test` works
 
 ## Done When
