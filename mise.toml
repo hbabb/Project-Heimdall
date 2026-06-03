@@ -1,2 +1,45 @@
 [tools]
+node = "latest"
 ruby = "4.0"
+
+[tasks.server]
+description = "Run the Ruby on Rails server"
+run = "bin/rails server"
+
+[tasks.routes]
+description = "Show Ruby on Rails routes"
+run = "bin/rails routes"
+
+[tasks.console]
+description = "Open Ruby on Rails console"
+run = "bin/rails console"
+
+[tasks.generate]
+alias = "gen"
+description = "Run Ruby on Rails generator"
+run = "bin/rails generate"
+
+[tasks.prepare]
+description = "Run Ruby on Rails db prepare command"
+run = "bin/rails db:prepare"
+
+[tasks.migrate]
+description = "Run Ruby on Rails database migration command"
+run = "bin/rails db:migrate"
+
+[tasks.test]
+description = "Run Ruby on Rails tests"
+run = "bin/rails test"
+
+[tasks.format]
+description = "Run Rubocop formatter to automatically fix"
+run = "bin/rubocop -a"
+
+[tasks.secure]
+description = "Run Ruby on Rails security with brakeman"
+run = "bin/brakeman"
+
+[tasks.credentials]
+alias = "cred"
+description = "Edit encrypted credentials file"
+run = "bin/rails credentials:edit"
